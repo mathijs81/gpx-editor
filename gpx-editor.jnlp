@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP File for GPX editor. -->
+<jnlp
+  spec="1.6+"
+  codebase="http://mathijs81.github.com/gpx-editor/"
+  href="gpx-editor.jnlp">
+  <information>
+    <title>GPX Editor Application</title>
+    <vendor>mathijs81 @ github</vendor>
+    <homepage href="/"/>
+    <description>GPX Editor</description>
+    <description kind="short">GPX Editor allows to make some quick fixes to GPX files.</description>
+    <offline-allowed/> 
+  </information>
+  <resources>
+    <j2se version="1.6+" max-heap-size="512m"/>
+    <jar href="gpx-editor.jar"/>
+  <security>
+  	<all-permissions/>
+  </security>
+  <application-desc main-class="com.github.mathijs81.gpxedit.GpxEdit"/>
+</jnlp> 

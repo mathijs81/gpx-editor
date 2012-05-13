@@ -7,9 +7,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -20,7 +20,7 @@ import org.w3c.dom.Document;
  * 
  * @author mathijs81
  */
-public class GpxEdit extends JApplet {
+public class GpxEdit extends JFrame {
 	private static final long serialVersionUID = -910040490239527330L;
 
 	private GpxView gpxView;
@@ -28,6 +28,7 @@ public class GpxEdit extends JApplet {
 	private JFileChooser chooser = new JFileChooser();
 
 	public GpxEdit() {
+		super("GPX Editor from http://github.com/mathijs81/gpx-editor");
 		JPanel main = new JPanel(new BorderLayout());
 		JButton loadButton = new JButton("Load GPX file.");
 		main.add(loadButton, BorderLayout.NORTH);
@@ -49,8 +50,11 @@ public class GpxEdit extends JApplet {
 		});
 
 		gpxView = new GpxView();
+		setSize(800, 600);
+		setLocationRelativeTo(null);
 		main.add(gpxView, BorderLayout.CENTER);
 		add(main);
+		setVisible(true);
 	}
 
 	private void loadGpx() {
@@ -91,5 +95,9 @@ public class GpxEdit extends JApplet {
 		if (chooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
 			saveFile(chooser.getSelectedFile());
 		}
+	}
+	
+	public static void main(String [] args) {
+		new GpxEdit();
 	}
 }
