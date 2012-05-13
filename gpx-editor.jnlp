@@ -15,6 +15,7 @@
   <resources>
     <j2se version="1.6+" max-heap-size="512m"/>
     <jar href="gpx-editor.jar"/>
+  </resources>
   <security>
   	<all-permissions/>
   </security>
